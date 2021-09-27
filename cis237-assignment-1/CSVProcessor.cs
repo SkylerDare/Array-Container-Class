@@ -12,8 +12,6 @@ namespace cis237_assignment_1
         public bool ImportCSV(string pathToCsv, Beverage[] beverages)
         {
             StreamReader streamReader = null;
-
-
             try
             {
                 string line;

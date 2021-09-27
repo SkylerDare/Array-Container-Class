@@ -23,9 +23,7 @@ namespace cis237_assignment_1
             while (input != "1" && input != "2" && input != "3" && input != "4" && input != "5")
             {
                 this.PrintErrorMessage();
-
                 this.PrintMenu();
-
                 input = Console.ReadLine();
             }
             return Int32.Parse(input);
@@ -41,6 +39,15 @@ namespace cis237_assignment_1
             Console.WriteLine("5. Exit");
         }
 
+        public void FileLoaded()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("File Was Already Loaded");
+            Console.WriteLine("Please Choose Another Option");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
         public void PrintList(string outputList)
         {
             Console.WriteLine("Printing the List");
@@ -51,7 +58,7 @@ namespace cis237_assignment_1
         public string PromptSearch(string searchString)
         {
             Console.WriteLine("Please Input a Beverage ID");
-            searchString = Console.ReadLine();
+            searchString = Console.ReadLine().ToUpper();
             return searchString;
         }
 
@@ -70,6 +77,20 @@ namespace cis237_assignment_1
             Console.WriteLine();
         }
 
+        public string CollectName(string name)
+        {
+            Console.WriteLine("Please Input a Beverage Name");
+            name = Console.ReadLine();
+            return name;
+        }
+
+        public string CollectPack(string pack)
+        {
+            Console.WriteLine("Please Input a Beverage Pack");
+            pack = Console.ReadLine();
+            return pack;
+        }
+
         public void BadID()
         {
             Console.WriteLine();
@@ -79,10 +100,36 @@ namespace cis237_assignment_1
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public void PromptInput()
+        public string CollectPrice(string price)
+        {
+            Console.WriteLine("Please Input a Beverage Price");
+            price = Console.ReadLine();
+            return price;
+        }
+
+        public void BadPrice()
         {
             Console.WriteLine();
-            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Please Input a Positive Decimal Beverage Price");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public string CollectActive(string active)
+        {
+            Console.WriteLine("Input TRUE or FALSE for Beverage Active");
+            active = Console.ReadLine().ToUpper();
+            return active;
+        }
+
+        public void BadActive()
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Please Input TRUE or FALSE");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private void PrintErrorMessage()

@@ -6,18 +6,23 @@ namespace cis237_assignment_1
     {
         static void Main(string[] args)
         {
-            Beverage myBeverage = new Beverage();
             UserInterface ui = new UserInterface();
             CSVProcessor csvProcessor = new CSVProcessor();
             string pathToCsv = "../../../../datafiles/beverage_list.csv";
             BeverageCollection beverage = new BeverageCollection();
+            bool fileLoaded = false;
             int choice = ui.GetUserInput();
 
             while (choice != 5)
             {
-                if (choice == 1)
+                if (choice == 1 && fileLoaded == true)
+                {
+                    ui.FileLoaded();
+                }
+                if (choice == 1 && fileLoaded == false)
                 {
                     beverage.LoadList(csvProcessor, pathToCsv);
+                    fileLoaded = true;
                 }
                 if (choice == 2)
                 {

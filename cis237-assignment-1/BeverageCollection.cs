@@ -14,16 +14,11 @@ namespace cis237_assignment_1
         Beverage[] beverages = new Beverage[4000];
 
         //****************************
-        //Properties
+        //No Properties
         //****************************
-        public Beverage[] GetArray
-        {
-            get { return beverages; }
-        }
         //****************************
-        //Constructors
+        //No Constructors
         //****************************
-
         //****************************
         //Methods
         //****************************
@@ -88,6 +83,76 @@ namespace cis237_assignment_1
             if (found == false)
             {
 
+                string tempID = "";
+
+                string tempName = "";
+
+                string tempPack = "";
+
+                decimal tempPrice = 0.00m;
+                string priceTest = "";
+
+                bool tempActive = false;
+                string tempActiveString = "";
+                bool validateActive = false;
+
+                tempID = searchString;
+                tempName = ui.CollectName(tempName);
+                tempPack = ui.CollectPack(tempPack);
+
+                while (tempPrice <= 0.00m)
+                {
+                    priceTest = ui.CollectPrice(priceTest);
+                    tempPrice = ValidatePrice(priceTest, tempPrice);
+                    if (tempPrice <= 0.00m)
+                    {
+                        ui.BadPrice();
+                    }
+                }
+
+                while (validateActive != true)
+                {
+                    tempActiveString = ui.CollectActive(tempActiveString);
+                    validateActive = ValidateActive(tempActiveString, validateActive);
+                    if (validateActive == true)
+                    {
+                        tempActive = bool.Parse(tempActiveString);
+                    }
+                    else
+                    {
+                        ui.BadActive();
+                    }
+                }
+
+                beverages[index] = new Beverage(tempID, tempName, tempPack, tempPrice, tempActive);
+            }
+        }
+
+        private decimal ValidatePrice(string priceTest, decimal price)
+        {
+            try
+            {
+                price = decimal.Parse(priceTest);
+                return price;
+            }
+            catch
+            {
+                price = 0.00m;
+                return price;
+            }
+        }
+
+        private bool ValidateActive(string activeString, bool validate)
+        {
+            if (activeString == "TRUE" || activeString == "FALSE")
+            {
+                validate = true;
+                return validate;
+            }
+            else
+            {
+                validate = false;
+                return validate;
             }
         }
     }

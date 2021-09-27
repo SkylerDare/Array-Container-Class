@@ -69,10 +69,5 @@ namespace cis237_assignment_1
             this._bevPrice = Price;
             this._bevActive = Active;
         }
-
-        public Beverage()
-        {
-
-        }
     }
 }
