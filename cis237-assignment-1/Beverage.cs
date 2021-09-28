@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//9/28/21
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +56,10 @@ namespace cis237_assignment_1
         //*******************
         // Methods
         //*******************
+        /// <summary>
+        /// ToString override for output of the beverage array
+        /// </summary>
+        /// <returns>string format of the contents of the beverage array</returns>
         public override string ToString()
         {
             return _bevID + " " + _bevName + " " + _bevPack + " " + _bevPrice + " " + _bevActive;

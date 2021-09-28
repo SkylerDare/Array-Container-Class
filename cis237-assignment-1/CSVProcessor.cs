@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//9/28/21
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,6 +12,12 @@ namespace cis237_assignment_1
 {
     class CSVProcessor
     {
+        /// <summary>
+        /// Read in a CSV file and use the contents to populate an Employee array
+        /// </summary>
+        /// <param name="pathToCsv">Path to the CSV file to be read in</param>
+        /// <param name="beverages">Array of Beverages to populate</param>
+        /// <returns>Whether it was successful or not</returns>
         public bool ImportCSV(string pathToCsv, Beverage[] beverages)
         {
             StreamReader streamReader = null;
@@ -42,7 +51,12 @@ namespace cis237_assignment_1
                 }
             }
         }
-
+        /// <summary>
+        /// Convert line to Beverage instance and insert into the Beverage array
+        /// </summary>
+        /// <param name="line">line to process</param>
+        /// <param name="beverages">array to insert into</param>
+        /// <param name="index">index at which to do the insertion</param>
         private static void ProcessLine(string line, Beverage[] beverages, int index)
         {
             string[] parts = line.Split(',');

@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Skyler Dare
+//CIS237
+//9/28/21
+using System;
 
 namespace cis237_assignment_1
 {
@@ -31,15 +34,13 @@ namespace cis237_assignment_1
                 }
                 if (choice == 3)
                 {
-                    string searchString = "";
                     bool found = false;
-                    beverage.SearchList(ui, searchString, found);
+                    beverage.SearchList(ui, found);
                 }
                 if (choice == 4)
                 {
-                    string searchString = "";
                     bool found = false;
-                    beverage.AddBeverage(ui, searchString, found);
+                    beverage.AddBeverage(ui, found);
                 }
                 choice = ui.GetUserInput();
             }
