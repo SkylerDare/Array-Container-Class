@@ -1,7 +1,7 @@
 # Assignment 1 - Review of C# Basic Concepts and Introduction to Git
 
 ## Author
-
+Skyler Dare
 
 
 ## Description
@@ -110,9 +110,9 @@ Suggestion/Hints:
 
 ## Outside Resources Used
 
-
+None
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+None that I can find.
 
